@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXProgressBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cliftonbartholomew.utilities.MainController">
+   <children>
+         <Pane layoutX="268.0" prefHeight="500.0" prefWidth="638.0" style="-fx-background-color: #424242;">
+            <children>
+               <Label layoutX="163.0" layoutY="39.0" style="-fx-font-family: Roboto;" text="CSV Generator" textFill="WHITE">
+                  <font>
+                     <Font size="34.0" />
+                  </font>
+               </Label>
+               <ComboBox fx:id="termComboBox" layoutX="163.0" layoutY="126.0" prefHeight="25.0" prefWidth="194.0" promptText="Choose the term" />
+               <TextField fx:id="fileFolderTextField" editable="false" layoutX="164.0" layoutY="170.0" onMouseClicked="#chooseFolderButtonClick" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: #E5E5E5;" text="Choose a file/folder" />
+               <MFXProgressBar fx:id="progressBar" disable="true" layoutX="100.0" layoutY="456.0" prefHeight="6.0" prefWidth="439.0" stylesheets="@../css/progressBar.css" />
+               <MFXButton fx:id="generateButton" buttonType="RAISED" layoutX="163.0" layoutY="229.0" onMouseClicked="#generateButtonClicked" onMouseEntered="#generateButtonEntered" onMouseExited="#generateButtonExited" prefHeight="36.0" prefWidth="194.0" style="-fx-background-color: #673ab7;" text="GENERATE" textFill="WHITE" />
+               <TextArea fx:id="outputTextArea" editable="false" layoutX="99.0" layoutY="302.0" prefHeight="136.0" prefWidth="439.0" />
+            <FontIcon iconColor="WHITE" iconLiteral="mdi2f-file-search-outline" iconSize="24" layoutX="112.0" layoutY="192.0" />
+            <FontIcon iconColor="WHITE" iconLiteral="mdi2c-calendar" iconSize="24" layoutX="112.0" layoutY="148.0" />
+            <FontIcon iconColor="WHITE" iconLiteral="mdi2d-download" iconSize="24" layoutX="112.0" layoutY="256.0" />
+            <FontIcon iconColor="#464646" iconLiteral="mdi2f-folder" layoutX="339.0" layoutY="188.0" />
+            <FontIcon iconColor="WHITE" iconLiteral="mdi2f-file-excel" iconSize="32" layoutX="108.0" layoutY="72.0" />
+            </children>
+         </Pane>
+         <Pane prefHeight="500.0" prefWidth="270.0" style="-fx-background-color: #1b1b1b;">
+            <children>
+               <Label layoutX="84.0" layoutY="14.0" style="-fx-font-family: roboto;" text="UTILITIES" textFill="WHITE">
+                  <font>
+                     <Font name="Century Gothic" size="34.0" />
+                  </font>
+               </Label>
+               <Pane layoutX="15.0" layoutY="204.0" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #1b1b1b; -fx-background-radius: 4;" />
+               <MFXButton fx:id="csvGeneratorMenuButton" buttonType="RAISED" graphicTextGap="32.0" layoutX="15.0" layoutY="120.0" onMouseClicked="#csvGeneratorButtonClicked" onMouseEntered="#csvGeneratorButtonEntered" onMouseExited="#csvGeneratorButtonExited" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #673ab7; -fx-font-family: Roboto;" text="CSV GENERATOR" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2f-file-excel" iconSize="24" />
+               </graphic>
+               </MFXButton>
+               <MFXButton fx:id="searchMenuButton" buttonType="RAISED" graphicTextGap="32.0" layoutX="15.0" layoutY="170.0" onMouseClicked="#searchButtonClicked" onMouseEntered="#searchButtonEntered" onMouseExited="#searchButtonExited" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #1b1b1b; -fx-font-family: Roboto;" text="SEARCH" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2b-book-search" iconSize="24" />
+               </graphic>
+               </MFXButton>
+               <MFXButton fx:id="settingsMenuButton" buttonType="RAISED" graphicTextGap="32.0" layoutX="20.0" layoutY="220.0" onMouseClicked="#settingsButtonClicked" onMouseEntered="#settingsButtonEntered" onMouseExited="#settingsButtonExited" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #1b1b1b; -fx-font-family: Roboto;" text="SETTINGS" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2c-cog" iconSize="24" />
+               </graphic>
+               </MFXButton>
+               <MFXButton fx:id="exitMenuButton" buttonType="RAISED" graphicTextGap="32.0" layoutX="15.0" layoutY="440.0" onMouseClicked="#exitButtonClicked" onMouseEntered="#exitButtonEntered" onMouseExited="#exitButtonExited" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #1b1b1b; -fx-font-family: Roboto;" text="EXIT" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2c-close-box" iconSize="24" />
+               </graphic>
+               </MFXButton>
+            <FontIcon iconColor="WHITE" iconLiteral="mdi2t-tools" iconSize="32" layoutX="28.0" layoutY="47.0" />
+            </children>
+         </Pane>
+      </children>
+</AnchorPane>
